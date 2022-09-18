@@ -29,11 +29,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+DEBUG = os.getenv('DEBUG')
 
 ALLOWED_HOSTS = ['webserver',
                  '0.0.0.0',
-                 '127.0.0.1']
+                 '127.0.0.1',
+                 'task-manager-ikonnikova.herokuapp.com']
 
 
 # Application definition
