@@ -1,10 +1,25 @@
+{% load bootstrap4 %}
+{% load i18n %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>first page</title>
+    <title>{% translate "First page" %}</title>
+    {% bootstrap_css %}
 </head>
-<body>
-    <h1>Hello, World!</h1>
+
+<body class="d-flex flex-column h-100">
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">{% translate "Main page" %}</a>
+            <div class="btn-group" data-toggle="buttons">
+                {% bootstrap_button "Вход" button_type="link" button_class="btn-info" size="md"%}
+                {% bootstrap_button "Регистрация" button_type="link" button_class="btn-info" size="md"%}
+                {% bootstrap_button "Пользователи" button_type="link" button_class="btn-info" size="md"%}
+            </div>
+        </nav>
+    </header>
 </body>
 </html>
