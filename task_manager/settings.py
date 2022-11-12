@@ -31,8 +31,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECRET_KEY = os.getenv("SECRET_KEY")
 SECRET_KEY = 'django-insecure-1%p(cujr9n#*30rnw)egot2!pkxl-u4=nwa+*h95dq-=83*qbo'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
-
+#DEBUG = os.getenv('DEBUG', 'False') == 'True'
+DEBUG = True
 ALLOWED_HOSTS = ['webserver',
                  '0.0.0.0',
                  '127.0.0.1',
@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'task_manager.apps.tasks',
     'task_manager.apps.labels',
     'django_filters',
+    'rollbar'
 ]
 
 MIDDLEWARE = [
@@ -194,7 +195,7 @@ LOGGING = {
         },
         'rollbar': {
             'filters': ['require_debug_false'],
-            'access_token': KEY,
+            'access_token': ROLLBAR_KEY,
             'environment': 'production',
             'class': 'rollbar.logger.RollbarHandler'
         },
