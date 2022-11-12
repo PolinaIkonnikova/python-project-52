@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-10 23:54+0500\n"
+"POT-Creation-Date: 2022-11-12 21:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,19 +36,22 @@ msgstr "Статус"
 msgid "Executor"
 msgstr "Исполнитель"
 
-#: task_manager/apps/tasks/filter.py:39
+#: task_manager/apps/tasks/filter.py:40
 #: task_manager/templates/tasks/show_task.html:14
 #: task_manager/templates/tasks/tasks_list.html:56
 msgid "Author"
 msgstr "Автор"
 
-#: task_manager/apps/tasks/filter.py:45
+#: task_manager/apps/tasks/filter.py:46
 msgid "My tasks only"
 msgstr "Только мои задачи"
 
-#: task_manager/templates/auth.html:9 task_manager/templates/auth.html:13
-#: task_manager/templates/basic.html:37
+#: task_manager/templates/auth.html:9 task_manager/templates/basic.html:37
 msgid "Log in"
+msgstr "Вход"
+
+#: task_manager/templates/auth.html:13
+msgid "Come in"
 msgstr "Войти"
 
 #: task_manager/templates/basic.html:12 task_manager/templates/basic.html:21
@@ -181,8 +184,8 @@ msgid "You need to authenticated"
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
 #: task_manager/utils/text.py:7
-msgid "You have no permission for this"
-msgstr "У вас нет прав для изменения другого пользователя."
+msgid "You don't have the rights to change another user."
+msgstr ""
 
 #: task_manager/utils/text.py:9
 msgid "The status successfully deleted"
@@ -229,8 +232,8 @@ msgid "The user successfully updated"
 msgstr "Пользователь успешно изменен."
 
 #: task_manager/utils/text.py:22
-msgid "You can't delete yourself. You have some tasks"
-msgstr "Невозможно удалить пользователя, потому что он используется"
+msgid "It is not possible to delete a user because it is being used"
+msgstr ""
 
 #: task_manager/utils/text.py:24
 msgid "The task successfully changed"
@@ -285,6 +288,12 @@ msgstr "Вы залогинены"
 #: task_manager/views.py:21
 msgid "You're logged out"
 msgstr "Вы разлогинены"
+
+#~ msgid "You have no permission for this"
+#~ msgstr "У вас нет прав для изменения другого пользователя."
+
+#~ msgid "You can't delete yourself. You have some tasks"
+#~ msgstr "Невозможно удалить пользователя, потому что он используется"
 
 #~ msgid "First page"
 #~ msgstr "Первая страница"
