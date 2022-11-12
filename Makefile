@@ -1,26 +1,19 @@
 install:
 	poetry install
 
-build:
-	poetry build
-
-publish:
-	poetry publish --dry-run
-
-package-install:
-	python3 -m pip install --user dist/*.whl
-
 uninstall:
 	python3 -m pip uninstall hexlet-code
 
 lint:
-	poetry run flake8 page_loader
+	poetry run flake8 task_manager
 
 test:
-	poetry run pytest
+	python3 manage.py test
 
 test-coverage:
-	poetry run pytest --cov=page_loader --cov-report xml
+	poetry run coverage run manage.py test
+	poetry run coverage xml
+	poetry run coverage report
 
 req:
 	poetry export -f requirements.txt -o requirements.txt
