@@ -1,0 +1,15 @@
+{% extends 'basic.html' %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% bootstrap_javascript jquery='full' %}
+{% bootstrap_css %}
+
+
+{% block content %}
+  <p>{% translate "Are you sure you want to delete" %} {{ object }}?</p>
+  <form method="post">
+    {% csrf_token %}
+    <input class="btn btn-danger" type="submit" value="{% translate 'Yes, delete' %}">
+  </form>
+{% endblock %}

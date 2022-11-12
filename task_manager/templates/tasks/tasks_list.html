@@ -1,0 +1,81 @@
+{% extends 'basic.html' %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% bootstrap_javascript jquery='full' %}
+{% bootstrap_css %}
+
+
+{% block content %}
+
+<div class="mb-3 text-center">
+    <h1>{% translate "Tasks" %}</h1>
+</div>
+
+<div class="card mb-3">
+  <div class="card-body bg-light p-3">
+    <form class="mb-0" method="get">
+      <div class="row">
+          <div class="col-md-4 mb-3">
+            {{ filter.form.status.label }}
+            {{ filter.form.status }}
+          </div>
+          <div class="col-md-5 mb-3">
+            {{ filter.form.executor.label }}
+            {{ filter.form.executor }}
+          </div>
+          <div class="col-auto mr-auto"><br>
+          {{ filter.form.self_task }} {{ filter.form.self_task.label }}
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-4 mb-3">
+            {{ filter.form.label.label }}
+            {{ filter.form.label }}
+          </div>
+          <div class="col-md-5 mb-3">
+            {{ filter.form.author.label }}
+            {{ filter.form.author }}
+          </div>
+        <div class="col-auto mx-auto"><br>
+          <button class="btn btn-primary" type="submit">{% translate "Show" %}</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<a href="{% url 'create_tsk' %}" class="btn btn-outline-primary mb-3" role="button">{% translate "Create task" %}</a>
+
+<table class="table table-striped border">
+    <thead>
+      <tr>
+        <th>{% translate "ID" %}</th>
+        <th>{% translate "Name" %}</th>
+        <th>{% translate "Status" %}</th>
+        <th>{% translate "Author" %}</th>
+        <th>{% translate "Executor" %}</th>
+        <th>{% translate "Created date" %}</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for tsk in tasks %}
+        <tr>
+          <td>{{ tsk.id }}</td>
+          <td><a href="{% url 'show_task' tsk.pk %}">{{ tsk.name}}</a></td>
+          <td>{{ tsk.status}}</td>
+          <td>{{ tsk.author}}</td>
+          <td>{{ tsk.executor}}</td>
+          <td>{{ tsk.time_create|date:'d.m.Y' }}</td>
+          <td>
+              <a href="{% url 'update_tsk' tsk.pk %}">{% translate "Update" %}</a>
+              <br>
+              <a href="{% url 'delete_tsk' tsk.pk %}">{% translate "Delete" %}</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
