@@ -8,7 +8,7 @@ lint:
 	poetry run flake8 task_manager
 
 test:
-	python3 manage.py test
+	python manage.py test
 
 test-coverage:
 	poetry run coverage run manage.py test
