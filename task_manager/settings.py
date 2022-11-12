@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 from dotenv import load_dotenv
 import os
+import rollbar
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 load_dotenv()
@@ -47,7 +49,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'task_manager',
-    'bootstrap4'
+    'bootstrap4',
+    'task_manager.apps.users',
+    'task_manager.apps.statuses',
+    'task_manager.apps.tasks',
+    'task_manager.apps.labels',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +66,19 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'rollbar.contrib.django.middleware.RollbarNotifierMiddleware'
 ]
+
+KEY = os.getenv("ROLLBAR_KEY")
+
+ROLLBAR = {
+    'access_token': KEY,
+    'environment': 'development' if DEBUG else 'production',
+    'code_version': '1.0',
+    'root': BASE_DIR,
+}
+
+rollbar.init(**ROLLBAR)
 
 ROOT_URLCONF = 'task_manager.urls'
 
@@ -92,22 +111,28 @@ DATABASES = {
     }
 }
 
+my_db = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(my_db)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'NumericPasswordValidator',
     },
 ]
 
@@ -117,12 +142,17 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru-ru'
 
+LANGUAGES = (
+    ('en', 'English'),
+    ('ru', 'Russian'),
+)
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'task_manager', 'locale'),
+)
+
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = False
-
 USE_TZ = True
 
 
@@ -134,8 +164,51 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+FIXTURE_DIRS = [os.path.join(BASE_DIR, 'fixtures')]
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue'
+        }
+    },
+    "handlers": {
+        "console": {
+            "level": "DEBUG",
+            'filters': ['require_debug_true'],
+            "class": "logging.StreamHandler",
+        },
+        'rollbar': {
+            'filters': ['require_debug_false'],
+            'access_token': KEY,
+            'environment': 'production',
+            'class': 'rollbar.logger.RollbarHandler'
+        },
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["console", 'rollbar'],
+            "level": "INFO",
+            "propagate": True
+        },
+        "task_manager": {
+            "handlers": ["console", 'rollbar'],
+            "level": "DEBUG",
+            "propagate": True
+        },
+    }
+}
