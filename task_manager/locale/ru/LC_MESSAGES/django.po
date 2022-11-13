@@ -190,7 +190,7 @@ msgstr "У вас нет прав для изменения другого по�
 
 #: task_manager/utils/text.py:9
 msgid "The status successfully deleted"
-msgstr "Статус успешно удален"
+msgstr "Статус успешно удалён"
 
 #: task_manager/utils/text.py:10
 msgid "The status successfully created"
@@ -198,7 +198,7 @@ msgstr "Статус успешно создан"
 
 #: task_manager/utils/text.py:11
 msgid "The status successfully updated"
-msgstr "Статус успешно изменен"
+msgstr "Статус успешно изменён"
 
 #: task_manager/utils/text.py:12
 msgid "This status is used, you can't delete it"
@@ -222,7 +222,7 @@ msgstr "Невозможно удалить метку, потому что он
 
 #: task_manager/utils/text.py:18
 msgid "The user deleted! You need to log in again"
-msgstr "Пользователь удален"
+msgstr "Пользователь удалён"
 
 #: task_manager/utils/text.py:19
 msgid "The user successfully created"
@@ -230,7 +230,7 @@ msgstr "Пользователь успешно зарегистрирован"
 
 #: task_manager/utils/text.py:20
 msgid "The user successfully updated"
-msgstr "Пользователь успешно изменен"
+msgstr "Пользователь успешно изменён"
 
 #: task_manager/utils/text.py:21
 msgid "It is not possible to delete a user because it is being used"
