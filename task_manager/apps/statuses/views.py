@@ -26,7 +26,6 @@ class StatusesList(LoginRequiredMixin, ListView):
 
 
 class CreateStatus(LoginRequiredMixin, SuccessMessageMixin, CreateView):
-    # fields = ('name',)
     form_class = StatusCreateUpdateForm
     model = Status
     template_name = 'crud/create&update.html'
@@ -41,7 +40,6 @@ class CreateStatus(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
 
 class UpdateStatus(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
-    #fields = ('name',)
     form_class = StatusCreateUpdateForm
     model = Status
     template_name = 'crud/create&update.html'

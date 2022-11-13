@@ -46,3 +46,7 @@ class TitleName:
         self.del_status = _('Delete status')
         self.del_task = _('Delete task')
         self.name = _('Name')
+        self.descr = _('Description')
+        self.label = _('Label')
+        self.status = _('Status')
+        self.executor = _('Executor')

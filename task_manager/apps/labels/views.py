@@ -27,7 +27,6 @@ class LabelsList(LoginRequiredMixin, ListView):
 
 
 class CreateLabel(LoginRequiredMixin, SuccessMessageMixin, CreateView):
-    # fields = ('name',)
     model = Label
     form_class = LabelCreateUpdateForm
     template_name = 'crud/create&update.html'
@@ -42,7 +41,6 @@ class CreateLabel(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
 
 class UpdateLabel(LoginRequiredMixin, SuccessMessageMixin,  UpdateView):
-    #fields = ('name',)
     model = Label
     form_class = LabelCreateUpdateForm
     template_name = 'crud/create&update.html'
