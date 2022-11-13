@@ -80,7 +80,7 @@ class DeleteUser(LoginRequiredMixin, UserPassesTestMixin,
     def handle_no_permission(self):
         if self.request.user.is_authenticated:
             message = my_messages.no_rigths_for_user
-            url = reverse_lazy('users_list')
+            url = self.success_url
         else:
             message = my_messages.login
             url = self.login_url
@@ -92,7 +92,7 @@ class DeleteUser(LoginRequiredMixin, UserPassesTestMixin,
         try:
             self.object.delete()
             messages.success(self.request, my_messages.user_delete)
-            return redirect(self.login_url)
+            return redirect(self.success_url)
         except ProtectedError:
             messages.warning(self.request,
                              my_messages.no_delete_user)
