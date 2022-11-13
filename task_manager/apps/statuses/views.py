@@ -41,7 +41,8 @@ class CreateStatus(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
 
 class UpdateStatus(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
-    fields = ('name',)
+    #fields = ('name',)
+    form_class = StatusCreateUpdateForm
     model = Status
     template_name = 'crud/create&update.html'
     success_url = reverse_lazy('statuses')

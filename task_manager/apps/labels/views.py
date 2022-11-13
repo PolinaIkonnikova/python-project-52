@@ -9,6 +9,7 @@ from django.db.models import ProtectedError
 from django.http import HttpResponseRedirect
 from task_manager.utils.text import MessageForUser, \
     TitleName
+from .forms import LabelCreateUpdateForm
 
 
 my_messages = MessageForUser()
@@ -26,8 +27,9 @@ class LabelsList(LoginRequiredMixin, ListView):
 
 
 class CreateLabel(LoginRequiredMixin, SuccessMessageMixin, CreateView):
-    fields = ('name',)
+    # fields = ('name',)
     model = Label
+    form_class = LabelCreateUpdateForm
     template_name = 'crud/create&update.html'
     success_url = reverse_lazy('labels')
     success_message = my_messages.label_create
@@ -40,8 +42,9 @@ class CreateLabel(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
 
 class UpdateLabel(LoginRequiredMixin, SuccessMessageMixin,  UpdateView):
-    fields = ('name',)
+    #fields = ('name',)
     model = Label
+    form_class = LabelCreateUpdateForm
     template_name = 'crud/create&update.html'
     success_url = reverse_lazy('labels')
     success_message = my_messages.label_update
