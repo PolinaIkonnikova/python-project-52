@@ -118,6 +118,7 @@ msgstr "ID"
 #: task_manager/templates/lists/labels_list.html:19
 #: task_manager/templates/lists/statuses_list.html:17
 #: task_manager/templates/tasks/tasks_list.html:54
+#: task_manager/utils/text.py:48
 msgid "Name"
 msgstr "Имя"
 
@@ -167,7 +168,8 @@ msgstr "Полное имя"
 msgid "Labels:"
 msgstr "Метки"
 
-#: task_manager/templates/tasks/show_task.html:43 task_manager/utils/text.py:43
+#: task_manager/templates/tasks/show_task.html:43
+#: task_manager/utils/text.py:43
 msgid "Create"
 msgstr "Создать"
 

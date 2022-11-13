@@ -1,6 +1,7 @@
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView,\
     DeleteView, UpdateView
+from .forms import StatusCreateUpdateForm
 from .models import Status
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
@@ -25,7 +26,8 @@ class StatusesList(LoginRequiredMixin, ListView):
 
 
 class CreateStatus(LoginRequiredMixin, SuccessMessageMixin, CreateView):
-    fields = ('name',)
+    # fields = ('name',)
+    form_class = StatusCreateUpdateForm
     model = Status
     template_name = 'crud/create&update.html'
     success_url = reverse_lazy('statuses')

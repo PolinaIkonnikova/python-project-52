@@ -45,3 +45,4 @@ class TitleName:
         self.del_label = _('Delete label')
         self.del_status = _('Delete status')
         self.del_task = _('Delete task')
+        self.name = _('Name')
