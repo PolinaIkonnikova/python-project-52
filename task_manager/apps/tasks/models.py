@@ -12,7 +12,7 @@ class Task(models.Model):
                                related_name='author')
     status = models.ForeignKey(Status, on_delete=models.PROTECT)
     executor = models.ForeignKey(User, on_delete=models.PROTECT,
-                                 null=True, related_name='executor')
+                                 related_name='executor')
     time_create = models.DateTimeField(auto_now_add=True, null=True)
     label = models.ManyToManyField(Label, through='LabelForTask')
 
