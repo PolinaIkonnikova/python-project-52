@@ -222,7 +222,7 @@ msgstr "Невозможно удалить метку, потому что он
 
 #: task_manager/utils/text.py:18
 msgid "The user deleted! You need to log in again"
-msgstr "Пользователь удалён"
+msgstr "Пользователь успешно удалён"
 
 #: task_manager/utils/text.py:19
 msgid "The user successfully created"
@@ -230,7 +230,7 @@ msgstr "Пользователь успешно зарегистрирован"
 
 #: task_manager/utils/text.py:20
 msgid "The user successfully updated"
-msgstr "Пользователь успешно изменён"
+msgstr "Пользователь успешно изменён`"
 
 #: task_manager/utils/text.py:21
 msgid "It is not possible to delete a user because it is being used"
