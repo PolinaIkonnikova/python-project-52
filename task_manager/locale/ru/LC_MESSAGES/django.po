@@ -20,9 +20,14 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: task_manager/apps/tasks/filter.py:19 task_manager/utils/text.py:50
+#: task_manager/apps/tasks/filter.py:19
+#: task_manager/utils/text.py:50
 msgid "Label"
 msgstr "Метка"
+
+#: task_manager/utils/text.py:49
+msgid "Description"
+msgstr "Описание"
 
 #: task_manager/apps/tasks/filter.py:26
 #: task_manager/templates/tasks/show_task.html:22
@@ -298,12 +303,6 @@ msgstr "Удаление статуса"
 #: task_manager/utils/text.py:47
 msgid "Delete task"
 msgstr "Удаление задачи"
-
-#: task_manager/utils/text.py:49
-#, fuzzy
-#| msgid "Registration"
-msgid "Description"
-msgstr "Регистрация"
 
 #: task_manager/views.py:16
 msgid "You're logged in"
