@@ -31,7 +31,7 @@ class CreateStatus(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     success_url = reverse_lazy('statuses')
     success_message = my_messages.status_create
     extra_context = {'header': title_names.create_status,
-                     'button_name': title_names.save}
+                     'button_name': title_names.create}
 
     def handle_no_permission(self):
         messages.warning(self.request, my_messages.login)
@@ -45,7 +45,7 @@ class UpdateStatus(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     success_url = reverse_lazy('statuses')
     success_message = my_messages.status_update
     extra_context = {'header': title_names.update_status,
-                     'button_name': title_names.save}
+                     'button_name': title_names.update}
 
     def handle_no_permission(self):
         messages.warning(self.request, my_messages.status_update)
@@ -56,6 +56,7 @@ class DeleteStatus(LoginRequiredMixin, DeleteView):
     model = Status
     success_url = reverse_lazy('statuses')
     template_name = 'crud/delete.html'
+    extra_context = {'deltitle': title_names.del_status}
 
     def handle_no_permission(self):
         messages.warning(self.request, my_messages.login)

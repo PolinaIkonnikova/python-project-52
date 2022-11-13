@@ -44,7 +44,7 @@ class CreateTask(LoginRequiredMixin, CreateView):
     template_name = 'crud/create&update.html'
     success_url = reverse_lazy('tasks_list')
     extra_context = {'header': title_names.create_task,
-                     'button_name': title_names.save}
+                     'button_name': title_names.create}
 
     def handle_no_permission(self):
         messages.warning(self.request, my_messages.login)
@@ -64,8 +64,8 @@ class UpdateTask(LoginRequiredMixin, SuccessMessageMixin,  UpdateView):
     template_name = 'crud/create&update.html'
     success_url = reverse_lazy('tasks_list')
     success_message = my_messages.task_update
-    extra_context = {'header': title_names.update_status,
-                     'button_name': title_names.save}
+    extra_context = {'header': title_names.update_task,
+                     'button_name': title_names.update}
 
     def handle_no_permission(self):
         messages.warning(self.request, my_messages.login)
@@ -79,6 +79,7 @@ class DeleteTask(LoginRequiredMixin, SuccessMessageMixin,
     success_url = reverse_lazy('tasks_list')
     template_name = 'crud/delete.html'
     success_message = my_messages.task_delete
+    extra_context = {'deltitle': title_names.del_task}
 
     def test_func(self):
         task = self.get_object()
