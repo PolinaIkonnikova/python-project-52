@@ -8,11 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-<<<<<<< HEAD
-"POT-Creation-Date: 2022-11-13 07:53+0000\n"
-=======
-"POT-Creation-Date: 2022-11-12 21:26+0000\n"
->>>>>>> d992615c9a0a4df5651021add2a09e82a7112cc7
+"POT-Creation-Date: 2022-11-13 12:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -109,7 +105,7 @@ msgid "Here you can create and manage tasks with statuses and tags."
 msgstr "Здесь вы можете создавать и управлять задачами с статусами и метками"
 
 #: task_manager/templates/lists/labels_list.html:13
-#: task_manager/utils/text.py:37
+#: task_manager/utils/text.py:35
 msgid "Create label"
 msgstr "Создать метку"
 
@@ -145,12 +141,12 @@ msgstr "Изменить"
 #: task_manager/templates/lists/statuses_list.html:31
 #: task_manager/templates/lists/users_list.html:33
 #: task_manager/templates/tasks/tasks_list.html:74
-#: task_manager/utils/text.py:34
+#: task_manager/utils/text.py:32
 msgid "Delete"
 msgstr "Удалить"
 
 #: task_manager/templates/lists/statuses_list.html:12
-#: task_manager/utils/text.py:39
+#: task_manager/utils/text.py:37
 msgid "Create status"
 msgstr "Создать статус"
 
@@ -181,119 +177,111 @@ msgid "Show"
 msgstr "Показать"
 
 #: task_manager/templates/tasks/tasks_list.html:48
-#: task_manager/utils/text.py:38
+#: task_manager/utils/text.py:36
 msgid "Create task"
 msgstr "Создать задачу"
 
-#: task_manager/utils/text.py:7
+#: task_manager/utils/text.py:6
 msgid "You need to authenticated"
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
-<<<<<<< HEAD
-#: task_manager/utils/text.py:8
-=======
 #: task_manager/utils/text.py:7
->>>>>>> d992615c9a0a4df5651021add2a09e82a7112cc7
 msgid "You don't have the rights to change another user."
 msgstr ""
 
-#: task_manager/utils/text.py:10
+#: task_manager/utils/text.py:9
 msgid "The status successfully deleted"
 msgstr "Статус успешно удален"
 
-#: task_manager/utils/text.py:11
+#: task_manager/utils/text.py:10
 msgid "The status successfully created"
 msgstr "Статус успешно создан"
 
-#: task_manager/utils/text.py:12
+#: task_manager/utils/text.py:11
 msgid "The status successfully updated"
 msgstr "Статус успешно изменен"
 
-#: task_manager/utils/text.py:13
+#: task_manager/utils/text.py:12
 msgid "This status is used, you can't delete it"
 msgstr "Невозможно удалить статус, потому что он используется"
 
-#: task_manager/utils/text.py:15
+#: task_manager/utils/text.py:13
 msgid "The label successfully deleted"
 msgstr "Метка успешно удалена"
 
-#: task_manager/utils/text.py:16
+#: task_manager/utils/text.py:14
 msgid "The label successfully created"
 msgstr "Метка успешно создана"
 
-#: task_manager/utils/text.py:17
+#: task_manager/utils/text.py:15
 msgid "The label successfully updated"
 msgstr "Метка успешно изменена"
 
-#: task_manager/utils/text.py:18
+#: task_manager/utils/text.py:16
 msgid "This label is used, you can't delete it"
 msgstr "Невозможно удалить метку, потому что она используется"
 
-#: task_manager/utils/text.py:20
+#: task_manager/utils/text.py:18
 msgid "The user deleted! You need to log in again"
 msgstr "Пользователь удален"
 
-#: task_manager/utils/text.py:21
+#: task_manager/utils/text.py:19
 msgid "The user successfully created"
-msgstr "Пользователь успешно создан"
+msgstr "Пользователь успешно зарегистрирован"
 
-#: task_manager/utils/text.py:22
+#: task_manager/utils/text.py:20
 msgid "The user successfully updated"
 msgstr "Пользователь успешно изменен"
 
-<<<<<<< HEAD
-#: task_manager/utils/text.py:23
-=======
-#: task_manager/utils/text.py:22
->>>>>>> d992615c9a0a4df5651021add2a09e82a7112cc7
+#: task_manager/utils/text.py:21
 msgid "It is not possible to delete a user because it is being used"
 msgstr ""
 
-#: task_manager/utils/text.py:25
+#: task_manager/utils/text.py:23
 msgid "The task successfully changed"
 msgstr "Задача успешно изменена"
 
-#: task_manager/utils/text.py:26
+#: task_manager/utils/text.py:24
 msgid "The task successfully created"
 msgstr "Задача успешно создана"
 
-#: task_manager/utils/text.py:27
+#: task_manager/utils/text.py:25
 msgid "The task successfully updated"
 msgstr "Задача успешно изменена"
 
-#: task_manager/utils/text.py:28
+#: task_manager/utils/text.py:26
 msgid "The task can only be deleted by its author"
 msgstr "Задачу может удалить только её автор"
 
-#: task_manager/utils/text.py:33
+#: task_manager/utils/text.py:31
 msgid "Save"
 msgstr "Сохранить"
 
-#: task_manager/utils/text.py:35
+#: task_manager/utils/text.py:33
 msgid "Registration"
 msgstr "Регистрация"
 
-#: task_manager/utils/text.py:36
+#: task_manager/utils/text.py:34
 msgid "To register"
 msgstr "Зарегистрировать"
 
-#: task_manager/utils/text.py:40
+#: task_manager/utils/text.py:38
 #, fuzzy
 #| msgid "Update status"
 msgid "Update label"
 msgstr "Изменить метку"
 
-#: task_manager/utils/text.py:41
+#: task_manager/utils/text.py:39
 #, fuzzy
 #| msgid "Update status"
 msgid "Update task"
 msgstr "Изменить задачу"
 
-#: task_manager/utils/text.py:42
+#: task_manager/utils/text.py:40
 msgid "Update status"
 msgstr "Изменить статус"
 
-#: task_manager/utils/text.py:43
+#: task_manager/utils/text.py:41
 #, fuzzy
 #| msgid "Update status"
 msgid "Update user"
