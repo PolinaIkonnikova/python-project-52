@@ -17,3 +17,12 @@ test-coverage:
 
 req:
 	poetry export -f requirements.txt -o requirements.txt
+
+mess:
+	python manage.py makemessages -l ru
+
+compil:
+	python manage.py compilemessages
+
+server:
+	python manage.py runserver

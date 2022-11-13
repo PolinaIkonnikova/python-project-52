@@ -10,7 +10,6 @@ class MessageForUser:
         self.status_create = _('The status successfully created')
         self.status_update = _('The status successfully updated')
         self.no_delete_status = _("This status is used, you can't delete it")
-
         self.label_delete = _('The label successfully deleted')
         self.label_create = _('The label successfully created')
         self.label_update = _('The label successfully updated')
@@ -32,6 +31,7 @@ class TitleName:
         self.save = _('Save')
         self.delete = _('Delete')
         self.reg = _('Registration')
+        self.to_reg = _('To register')
         self.create_label = _('Create label')
         self.create_task = _('Create task')
         self.create_status = _('Create status')

@@ -29,7 +29,7 @@ class RegisterUser(SuccessMessageMixin, CreateView):
     success_url = reverse_lazy('login')
     success_message = my_messages.user_create
     extra_context = {'header': title_names.reg,
-                     'button_name': title_names.reg}
+                     'button_name': title_names.to_reg}
 
 
 class UpdateUser(LoginRequiredMixin, SuccessMessageMixin,

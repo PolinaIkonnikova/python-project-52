@@ -29,10 +29,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 SECRET_KEY = os.getenv("SECRET_KEY")
-# SECRET_KEY = 'django-insecure-1%p(cujr9n#*30rnw)egot2!pkxl-u4=nwa+*h95dq-=83*qbo'
+
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = os.getenv('DEBUG', 'False') == 'True'
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 ALLOWED_HOSTS = ['webserver',
                  '0.0.0.0',
                  '127.0.0.1',
@@ -71,7 +70,7 @@ MIDDLEWARE = [
 ]
 
 ROLLBAR_KEY = os.getenv("ROLLBAR_KEY")
-# ROLLBAR_KEY = 'a6b53c16037f45ee9ca52dc6d44007d3'
+
 ROLLBAR = {
     'access_token': ROLLBAR_KEY,
     'environment': 'development' if DEBUG else 'production',
