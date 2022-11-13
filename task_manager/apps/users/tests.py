@@ -65,7 +65,7 @@ class UserTestCase(TestCase):
         """ POST """
         post_response = self.client.post(update_user,
                                          self.form_data, follow=True)
-        self.assertRedirects(post_response, self.login)
+        self.assertRedirects(post_response, self.users_list)
         updated_user = User.objects.get(pk=2)
         self.assertEqual(updated_user.username, 'NewName')
         self.assertContains(post_response, text=messages.user_update)
