@@ -1,7 +1,7 @@
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView,\
     DeleteView, UpdateView
-from .forms import StatusCreateUpdateForm
+# from .forms import StatusCreateUpdateForm
 from .models import Status
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
@@ -26,8 +26,9 @@ class StatusesList(LoginRequiredMixin, ListView):
 
 
 class CreateStatus(LoginRequiredMixin, SuccessMessageMixin, CreateView):
-    form_class = StatusCreateUpdateForm
+    # form_class = StatusCreateUpdateForm
     model = Status
+    fields = ['name']
     template_name = 'crud/create&update.html'
     success_url = reverse_lazy('statuses')
     success_message = my_messages.status_create
@@ -40,8 +41,9 @@ class CreateStatus(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
 
 class UpdateStatus(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
-    form_class = StatusCreateUpdateForm
+    # form_class = StatusCreateUpdateForm
     model = Status
+    fields = ['name']
     template_name = 'crud/create&update.html'
     success_url = reverse_lazy('statuses')
     success_message = my_messages.status_update
@@ -57,7 +59,7 @@ class DeleteStatus(LoginRequiredMixin, DeleteView):
     model = Status
     success_url = reverse_lazy('statuses')
     template_name = 'crud/delete.html'
-    extra_context = {'deltitle': title_names.del_status}
+    extra_context = {'deltitle': title_names.to_del_status}
 
     def handle_no_permission(self):
         messages.warning(self.request, my_messages.login)

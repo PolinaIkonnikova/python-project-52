@@ -71,7 +71,7 @@ class DeleteUser(LoginRequiredMixin, UserPassesTestMixin,
     login_url = 'login'
     success_url = reverse_lazy('users_list')
     template_name = 'crud/delete.html'
-    extra_context = {'deltitle': title_names.del_user}
+    extra_context = {'deltitle': title_names.to_del_user}
 
     def test_func(self):
         user = self.get_object()

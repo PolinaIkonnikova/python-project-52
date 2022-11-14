@@ -9,7 +9,7 @@ from django.db.models import ProtectedError
 from django.http import HttpResponseRedirect
 from task_manager.utils.text import MessageForUser, \
     TitleName
-from .forms import LabelCreateUpdateForm
+# from .forms import LabelCreateUpdateForm
 
 
 my_messages = MessageForUser()
@@ -28,7 +28,8 @@ class LabelsList(LoginRequiredMixin, ListView):
 
 class CreateLabel(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Label
-    form_class = LabelCreateUpdateForm
+    fields = ['name']
+    # form_class = LabelCreateUpdateForm
     template_name = 'crud/create&update.html'
     success_url = reverse_lazy('labels')
     success_message = my_messages.label_create
@@ -42,7 +43,8 @@ class CreateLabel(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
 class UpdateLabel(LoginRequiredMixin, SuccessMessageMixin,  UpdateView):
     model = Label
-    form_class = LabelCreateUpdateForm
+    # form_class = LabelCreateUpdateForm
+    fields = ['name']
     template_name = 'crud/create&update.html'
     success_url = reverse_lazy('labels')
     success_message = my_messages.label_update
@@ -58,7 +60,7 @@ class DeleteLabel(LoginRequiredMixin, DeleteView):
     model = Label
     success_url = reverse_lazy('labels')
     template_name = 'crud/delete.html'
-    extra_context = {'deltitle': title_names.del_label}
+    extra_context = {'deltitle': title_names.to_del_label}
 
     def handle_no_permission(self):
         messages.warning(self.request, my_messages.login)

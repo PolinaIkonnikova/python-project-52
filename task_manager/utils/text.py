@@ -41,12 +41,19 @@ class TitleName:
         self.update_user = _('Update user')
         self.update = _('Update')
         self.create = _('Create')
-        self.del_user = _('Delete user')
-        self.del_label = _('Delete label')
-        self.del_status = _('Delete status')
-        self.del_task = _('Delete task')
+        self.to_del_task = _('To delete task')
+        self.to_del_user = _('To delete user')
+        self.to_del_label = _('To delete label')
+        self.to_del_status = _('To delete status')
+
+
+class NameForField:
+    def __init__(self):
         self.name = _('Name')
         self.descr = _('Description')
         self.label = _('Label')
         self.status = _('Status')
         self.executor = _('Executor')
+        self.date = _('Date')
+        self.task = _('Task')
+        self.author = _('Author')
