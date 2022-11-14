@@ -9,7 +9,7 @@ names = NameForField()
 
 class Task(models.Model):
     name = models.CharField(max_length=255,
-                            verbose_name=names.author)
+                            verbose_name=names.name)
 
     description = models.TextField(null=True,
                                    verbose_name=names.descr)
