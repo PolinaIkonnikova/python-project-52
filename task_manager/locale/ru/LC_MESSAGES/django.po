@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-15 10:18+0000\n"
+"POT-Creation-Date: 2022-11-15 11:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,21 +25,21 @@ msgid "Label"
 msgstr "Метка"
 
 #: task_manager/apps/tasks/filter.py:27
-#: task_manager/templates/tasks/show_task.html:22
+#: task_manager/templates/tasks/show_task.html:23
 #: task_manager/templates/tasks/tasks_list.html:55
 #: task_manager/utils/text.py:55
 msgid "Status"
 msgstr "Статус"
 
 #: task_manager/apps/tasks/filter.py:34
-#: task_manager/templates/tasks/show_task.html:18
+#: task_manager/templates/tasks/show_task.html:19
 #: task_manager/templates/tasks/tasks_list.html:57
 #: task_manager/utils/text.py:56
 msgid "Executor"
 msgstr "Исполнитель"
 
 #: task_manager/apps/tasks/filter.py:41
-#: task_manager/templates/tasks/show_task.html:14
+#: task_manager/templates/tasks/show_task.html:15
 #: task_manager/templates/tasks/tasks_list.html:56
 #: task_manager/utils/text.py:59
 msgid "Author"
@@ -73,6 +73,7 @@ msgstr "Статусы"
 
 #: task_manager/templates/basic.html:25
 #: task_manager/templates/lists/labels_list.html:10
+#: task_manager/utils/text.py:60
 msgid "Labels"
 msgstr "Метки"
 
@@ -128,7 +129,7 @@ msgstr "Имя"
 #: task_manager/templates/lists/labels_list.html:20
 #: task_manager/templates/lists/statuses_list.html:18
 #: task_manager/templates/lists/users_list.html:19
-#: task_manager/templates/tasks/show_task.html:26
+#: task_manager/templates/tasks/show_task.html:27
 #: task_manager/templates/tasks/tasks_list.html:58
 msgid "Created date"
 msgstr "Дата создания"
@@ -136,7 +137,7 @@ msgstr "Дата создания"
 #: task_manager/templates/lists/labels_list.html:31
 #: task_manager/templates/lists/statuses_list.html:29
 #: task_manager/templates/lists/users_list.html:31
-#: task_manager/templates/tasks/show_task.html:41
+#: task_manager/templates/tasks/show_task.html:42
 #: task_manager/templates/tasks/tasks_list.html:72
 #: task_manager/utils/text.py:42
 msgid "Update"
@@ -167,11 +168,15 @@ msgstr "Имя пользователя"
 msgid "Full name"
 msgstr "Полное имя"
 
-#: task_manager/templates/tasks/show_task.html:31
+#: task_manager/templates/tasks/show_task.html:6
+msgid "Task show"
+msgstr "Просмотр Задачи"
+
+#: task_manager/templates/tasks/show_task.html:32
 msgid "Labels:"
 msgstr "Метки"
 
-#: task_manager/templates/tasks/show_task.html:43 task_manager/utils/text.py:43
+#: task_manager/templates/tasks/show_task.html:44 task_manager/utils/text.py:43
 msgid "Create"
 msgstr "Создать"
 
