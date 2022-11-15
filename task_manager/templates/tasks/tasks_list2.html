@@ -12,10 +12,38 @@
     <h1>{% translate "Tasks" %}</h1>
 </div>
 
-<form method="get">
-    {% bootstrap_form filter.form size='small' %}
-    <button type="submit" class="btn btn-primary">{% translate "Show" %}</button>
-</form>
+<div class="card mb-3">
+  <div class="card-body bg-light p-3">
+    <form class="mb-0" method="get">
+      <div class="row">
+          <div class="col-md-4 mb-3">
+            {{ filter.form.status.label }}
+            {{ filter.form.status }}
+          </div>
+          <div class="col-md-5 mb-3">
+            {{ filter.form.executor.label }}
+            {{ filter.form.executor }}
+          </div>
+          <div class="col-auto mr-auto"><br>
+          {{ filter.form.self_task }} {% translate 'My tasks only' %}
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-4 mb-3">
+            {{ filter.form.label.label }}
+            {{ filter.form.label }}
+          </div>
+          <div class="col-md-5 mb-3">
+            {{ filter.form.author.label }}
+            {{ filter.form.author }}
+          </div>
+        <div class="col-auto mx-auto"><br>
+          <button class="btn btn-primary" type="submit">{% translate "Show" %}</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
 
 <a href="{% url 'create_tsk' %}" class="btn btn-outline-primary mb-3" role="button">{% translate "Create task" %}</a>
 

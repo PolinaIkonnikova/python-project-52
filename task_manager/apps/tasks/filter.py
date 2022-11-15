@@ -45,8 +45,11 @@ class TaskFilter(FilterSet):
                                           'title_id': 'id_author'}))
 
     self_task = BooleanFilter(label=_('My tasks only'),
-                              widget=forms.widgets.CheckboxInput(),
-                              method='my_task_filter')
+                              widget=forms.widgets.CheckboxInput(
+                                  attrs={'name': 'self_task',
+                                         'title_id': 'id_self_task'}),
+                              method='my_task_filter',
+                              )
 
     class Meta:
         model = Task
