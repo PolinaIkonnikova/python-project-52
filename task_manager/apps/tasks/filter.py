@@ -16,12 +16,12 @@ class TaskFilter(FilterSet):
             queryset = queryset.filter(author=author)
         return queryset
 
-    label = ModelChoiceFilter(queryset=Label.objects.all(),
-                              label=_('Label'),
-                              widget=forms.Select(
-                                  attrs={'name': 'label',
-                                         'class': 'custom-select d-block',
-                                         'title_id': 'id_label'}))
+    labels = ModelChoiceFilter(queryset=Label.objects.all(),
+                               label=_('Label'),
+                               widget=forms.Select(
+                                   attrs={'name': 'label',
+                                          'class': 'custom-select d-block',
+                                          'title_id': 'id_label'}))
 
     status = ModelChoiceFilter(queryset=Status.objects.all(),
                                label=_('Status'),
@@ -53,4 +53,4 @@ class TaskFilter(FilterSet):
 
     class Meta:
         model = Task
-        fields = ['status', 'executor', 'label', 'author', 'self_task']
+        fields = ['status', 'executor', 'labels', 'author', 'self_task']
