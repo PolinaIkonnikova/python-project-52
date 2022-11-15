@@ -2,7 +2,7 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView,\
     DeleteView, UpdateView, DetailView
 from django_filters.views import FilterView
-from .forms import TaskCreateUpdateForm
+# from .forms import TaskCreateUpdateForm
 from .models import Task
 from django.contrib.auth.mixins import LoginRequiredMixin, \
     UserPassesTestMixin
@@ -41,8 +41,8 @@ class ShowTask(LoginRequiredMixin, DetailView):
 
 class CreateTask(LoginRequiredMixin, CreateView):
     model = Task
-    # fields = ['name', 'description', 'status', 'executor', 'label']
-    form_class = TaskCreateUpdateForm
+    fields = ['name', 'description', 'status', 'executor', 'labels']
+    # form_class = TaskCreateUpdateForm
     template_name = 'crud/create&update.html'
     success_url = reverse_lazy('tasks_list')
     extra_context = {'header': title_names.create_task,
@@ -63,8 +63,8 @@ class CreateTask(LoginRequiredMixin, CreateView):
 class UpdateTask(LoginRequiredMixin, SuccessMessageMixin,
                  UpdateView):
     model = Task
-    # fields = ['name', 'description', 'status', 'executor', 'label']
-    form_class = TaskCreateUpdateForm
+    fields = ['name', 'description', 'status', 'executor', 'labels']
+    # form_class = TaskCreateUpdateForm
     template_name = 'crud/create&update.html'
     success_url = reverse_lazy('tasks_list')
     success_message = my_messages.task_update

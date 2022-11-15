@@ -6,17 +6,17 @@ from task_manager.apps.labels.models import Label
 names = NameForField()
 
 
-class TaskCreateUpdateForm(forms.ModelForm):
-
-    labels = forms.ModelMultipleChoiceField(
-        label=names.labels,
-        label_suffix='',
-        required=False,
-        widget=forms.SelectMultiple(
-            attrs={'placeholder': names.labels}),
-        queryset=Label.objects.all())
-
-    class Meta:
-        model = Task
-        fields = ('name', 'description', 'status',
-                  'executor', 'labels')
+# class TaskCreateUpdateForm(forms.ModelForm):
+#
+#     # labels = forms.ModelMultipleChoiceField(
+#     #     label=names.labels,
+#     #     label_suffix='',
+#     #     required=False,
+#     #     widget=forms.SelectMultiple(
+#     #         attrs={'placeholder': names.labels}),
+#     #     queryset=Label.objects.all())
+#
+#     class Meta:
+#         model = Task
+#         fields = ('name', 'description', 'status',
+#                   'executor', 'labels')

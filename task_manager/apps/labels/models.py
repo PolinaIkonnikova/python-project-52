@@ -9,5 +9,9 @@ class Label(models.Model):
     name = models.CharField(max_length=255,
                             verbose_name=names.name)
 
+    class Meta:
+        verbose_name = names.label
+        verbose_name_plural = names.labels
+
     def __str__(self):
         return self.name

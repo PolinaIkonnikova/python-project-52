@@ -30,7 +30,7 @@
     <div class="row m-1">
         <div class="col">
             <h6>{% translate "Labels:" %}</h6>
-            {% for lbl in task.label.all %}
+            {% for lbl in task.labels.all %}
             <ul>
                 <li>{{ lbl }}</li>
             </ul>
