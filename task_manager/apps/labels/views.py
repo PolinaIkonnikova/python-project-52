@@ -41,7 +41,7 @@ class CreateLabel(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         return super().handle_no_permission()
 
 
-class UpdateLabel(LoginRequiredMixin, SuccessMessageMixin,  UpdateView):
+class UpdateLabel(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Label
     # form_class = LabelCreateUpdateForm
     fields = ['name']
