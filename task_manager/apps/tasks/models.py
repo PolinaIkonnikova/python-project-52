@@ -30,7 +30,7 @@ class Task(models.Model):
                                        verbose_name=names.date)
 
     label = models.ManyToManyField(Label, through='LabelForTask',
-                                   verbose_name=names.label)
+                                   verbose_name=names.labels)
 
     def __str__(self):
         return self.name

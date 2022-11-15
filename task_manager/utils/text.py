@@ -57,3 +57,4 @@ class NameForField:
         self.date = _('Date')
         self.task = _('Task')
         self.author = _('Author')
+        self.labels = _('Labels')
