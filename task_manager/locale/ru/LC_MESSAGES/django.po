@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-14 18:49+0000\n"
+"POT-Creation-Date: 2022-11-15 10:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,32 +20,32 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: task_manager/apps/tasks/filter.py:19 task_manager/utils/text.py:54
+#: task_manager/apps/tasks/filter.py:20 task_manager/utils/text.py:54
 msgid "Label"
 msgstr "Метка"
 
-#: task_manager/apps/tasks/filter.py:26
+#: task_manager/apps/tasks/filter.py:27
 #: task_manager/templates/tasks/show_task.html:22
 #: task_manager/templates/tasks/tasks_list.html:55
 #: task_manager/utils/text.py:55
 msgid "Status"
 msgstr "Статус"
 
-#: task_manager/apps/tasks/filter.py:33
+#: task_manager/apps/tasks/filter.py:34
 #: task_manager/templates/tasks/show_task.html:18
 #: task_manager/templates/tasks/tasks_list.html:57
 #: task_manager/utils/text.py:56
 msgid "Executor"
 msgstr "Исполнитель"
 
-#: task_manager/apps/tasks/filter.py:40
+#: task_manager/apps/tasks/filter.py:41
 #: task_manager/templates/tasks/show_task.html:14
 #: task_manager/templates/tasks/tasks_list.html:56
 #: task_manager/utils/text.py:59
 msgid "Author"
 msgstr "Автор"
 
-#: task_manager/apps/tasks/filter.py:46
+#: task_manager/apps/tasks/filter.py:47
 msgid "My tasks only"
 msgstr "Только мои задачи"
 
@@ -241,8 +241,8 @@ msgid "It is not possible to delete a user because it is being used"
 msgstr "Невозможно удалить пользователя, потому что он используется"
 
 #: task_manager/utils/text.py:23
-msgid "The task successfully changed"
-msgstr "Задача успешно изменена"
+msgid "The task successfully deleted"
+msgstr "Задача успешно удалена"
 
 #: task_manager/utils/text.py:24
 msgid "The task successfully created"
@@ -319,3 +319,6 @@ msgstr "Вы залогинены"
 #: task_manager/views.py:21
 msgid "You're logged out"
 msgstr "Вы разлогинены"
+
+#~ msgid "The task successfully changed"
+#~ msgstr "Задача успешно изменена"

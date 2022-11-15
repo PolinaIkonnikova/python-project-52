@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from task_manager.apps.users.models import User
 from task_manager.apps.statuses.models import Status
 from task_manager.apps.labels.models import Label
 from task_manager.utils.text import NameForField

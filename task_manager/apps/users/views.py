@@ -1,7 +1,8 @@
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView,\
     DeleteView, UpdateView
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
+from .models import User
 from .forms import Register
 from django.contrib.auth.mixins import LoginRequiredMixin,\
     UserPassesTestMixin

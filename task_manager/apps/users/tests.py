@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.urls import reverse
-from django.contrib.auth.models import User
+from task_manager.apps.users.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from task_manager.utils.text import MessageForUser
 # import pytest

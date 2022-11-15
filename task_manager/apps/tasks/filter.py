@@ -2,7 +2,8 @@ from django_filters import FilterSet, BooleanFilter, ModelChoiceFilter
 from .models import Task
 from task_manager.apps.labels.models import Label
 from task_manager.apps.statuses.models import Status
-from django.contrib.auth.models import User
+from task_manager.apps.users.models import User
+# from django.contrib.auth.models import User
 from django.utils.translation import gettext as _
 from django import forms
 

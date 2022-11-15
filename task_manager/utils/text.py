@@ -20,7 +20,7 @@ class MessageForUser:
         self.user_update = _('The user successfully updated')
         self.no_delete_user = _("It is not possible to delete a user "
                                 "because it is being used")
-        self.task_delete = _('The task successfully changed')
+        self.task_delete = _('The task successfully deleted')
         self.task_create = _('The task successfully created')
         self.task_update = _('The task successfully updated')
         self.no_delete_task = _("The task can only be deleted by its author")
