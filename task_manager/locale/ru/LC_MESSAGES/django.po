@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-15 11:13+0000\n"
+"POT-Creation-Date: 2022-11-15 13:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,26 +26,30 @@ msgstr "Метка"
 
 #: task_manager/apps/tasks/filter.py:27
 #: task_manager/templates/tasks/show_task.html:23
-#: task_manager/templates/tasks/tasks_list.html:55
+#: task_manager/templates/tasks/tasks_list.html:27
+#: task_manager/templates/tasks/tasks_list2.html:55
 #: task_manager/utils/text.py:55
 msgid "Status"
 msgstr "Статус"
 
 #: task_manager/apps/tasks/filter.py:34
 #: task_manager/templates/tasks/show_task.html:19
-#: task_manager/templates/tasks/tasks_list.html:57
+#: task_manager/templates/tasks/tasks_list.html:29
+#: task_manager/templates/tasks/tasks_list2.html:57
 #: task_manager/utils/text.py:56
 msgid "Executor"
 msgstr "Исполнитель"
 
 #: task_manager/apps/tasks/filter.py:41
 #: task_manager/templates/tasks/show_task.html:15
-#: task_manager/templates/tasks/tasks_list.html:56
+#: task_manager/templates/tasks/tasks_list.html:28
+#: task_manager/templates/tasks/tasks_list2.html:56
 #: task_manager/utils/text.py:59
 msgid "Author"
 msgstr "Автор"
 
 #: task_manager/apps/tasks/filter.py:47
+#: task_manager/templates/tasks/tasks_list2.html:28
 msgid "My tasks only"
 msgstr "Только свои задачи"
 
@@ -79,6 +83,7 @@ msgstr "Метки"
 
 #: task_manager/templates/basic.html:26
 #: task_manager/templates/tasks/tasks_list.html:12
+#: task_manager/templates/tasks/tasks_list2.html:12
 msgid "Tasks"
 msgstr "Задачи"
 
@@ -115,13 +120,15 @@ msgstr "Создать метку"
 
 #: task_manager/templates/lists/labels_list.html:18
 #: task_manager/templates/lists/statuses_list.html:16
-#: task_manager/templates/tasks/tasks_list.html:53
+#: task_manager/templates/tasks/tasks_list.html:25
+#: task_manager/templates/tasks/tasks_list2.html:53
 msgid "ID"
 msgstr "ID"
 
 #: task_manager/templates/lists/labels_list.html:19
 #: task_manager/templates/lists/statuses_list.html:17
-#: task_manager/templates/tasks/tasks_list.html:54
+#: task_manager/templates/tasks/tasks_list.html:26
+#: task_manager/templates/tasks/tasks_list2.html:54
 #: task_manager/utils/text.py:52
 msgid "Name"
 msgstr "Имя"
@@ -130,7 +137,8 @@ msgstr "Имя"
 #: task_manager/templates/lists/statuses_list.html:18
 #: task_manager/templates/lists/users_list.html:19
 #: task_manager/templates/tasks/show_task.html:27
-#: task_manager/templates/tasks/tasks_list.html:58
+#: task_manager/templates/tasks/tasks_list.html:30
+#: task_manager/templates/tasks/tasks_list2.html:58
 msgid "Created date"
 msgstr "Дата создания"
 
@@ -138,7 +146,8 @@ msgstr "Дата создания"
 #: task_manager/templates/lists/statuses_list.html:29
 #: task_manager/templates/lists/users_list.html:31
 #: task_manager/templates/tasks/show_task.html:42
-#: task_manager/templates/tasks/tasks_list.html:72
+#: task_manager/templates/tasks/tasks_list.html:44
+#: task_manager/templates/tasks/tasks_list2.html:72
 #: task_manager/utils/text.py:42
 msgid "Update"
 msgstr "Изменить"
@@ -146,7 +155,8 @@ msgstr "Изменить"
 #: task_manager/templates/lists/labels_list.html:33
 #: task_manager/templates/lists/statuses_list.html:31
 #: task_manager/templates/lists/users_list.html:33
-#: task_manager/templates/tasks/tasks_list.html:74
+#: task_manager/templates/tasks/tasks_list.html:46
+#: task_manager/templates/tasks/tasks_list2.html:74
 #: task_manager/utils/text.py:32
 msgid "Delete"
 msgstr "Удалить"
@@ -180,11 +190,13 @@ msgstr "Метки"
 msgid "Create"
 msgstr "Создать"
 
-#: task_manager/templates/tasks/tasks_list.html:41
+#: task_manager/templates/tasks/tasks_list.html:17
+#: task_manager/templates/tasks/tasks_list2.html:41
 msgid "Show"
 msgstr "Показать"
 
-#: task_manager/templates/tasks/tasks_list.html:48
+#: task_manager/templates/tasks/tasks_list.html:20
+#: task_manager/templates/tasks/tasks_list2.html:48
 #: task_manager/utils/text.py:36
 msgid "Create task"
 msgstr "Создать задачу"

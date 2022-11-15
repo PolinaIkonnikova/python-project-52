@@ -4,6 +4,7 @@ from task_manager.apps.statuses.models import Status
 from task_manager.apps.labels.models import Label
 from task_manager.utils.text import NameForField
 
+
 names = NameForField()
 
 
@@ -29,7 +30,8 @@ class Task(models.Model):
     time_create = models.DateTimeField(auto_now_add=True,
                                        verbose_name=names.date)
 
-    label = models.ManyToManyField(Label, through='LabelForTask',
+    label = models.ManyToManyField(Label,
+                                   through='LabelForTask',
                                    verbose_name=names.labels,
                                    blank=True)
 
