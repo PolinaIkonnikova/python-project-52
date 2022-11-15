@@ -1,11 +1,9 @@
-from django import forms
-from task_manager.apps.tasks.models import Task
-from task_manager.utils.text import NameForField
-from task_manager.apps.labels.models import Label
-
-names = NameForField()
-
-
+# from django import forms
+# from task_manager.apps.tasks.models import Task
+# from task_manager.utils.text import NameForField
+# from task_manager.apps.labels.models import Label
+#
+# names = NameForField()
 # class TaskCreateUpdateForm(forms.ModelForm):
 #
 #     # labels = forms.ModelMultipleChoiceField(
