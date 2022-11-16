@@ -22,11 +22,12 @@ class TasksList(LoginRequiredMixin, FilterView):
     context_object_name = 'tasks'
     template_name = 'tasks/tasks_list.html'
     filterset_class = TaskFilter
+    login_url = 'login'
 
     def handle_no_permission(self):
         messages.warning(self.request, my_messages.login)
-        return super().handle_no_permission()
-
+        #return super().handle_no_permission()
+        return redirect(self.login_url)
 
 class ShowTask(LoginRequiredMixin, DetailView):
     model = Task
@@ -36,13 +37,13 @@ class ShowTask(LoginRequiredMixin, DetailView):
 
     def handle_no_permission(self):
         messages.warning(self.request, my_messages.login)
-        return super().handle_no_permission()
+        # return super().handle_no_permission()
+        return redirect(self.login_url)
 
 
 class CreateTask(LoginRequiredMixin, CreateView):
     model = Task
     fields = ['name', 'description', 'status', 'executor', 'labels']
-    # form_class = TaskCreateUpdateForm
     template_name = 'crud/create&update.html'
     success_url = reverse_lazy('tasks_list')
     extra_context = {'header': title_names.create_task,
@@ -64,7 +65,6 @@ class UpdateTask(LoginRequiredMixin, SuccessMessageMixin,
                  UpdateView):
     model = Task
     fields = ['name', 'description', 'status', 'executor', 'labels']
-    # form_class = TaskCreateUpdateForm
     template_name = 'crud/create&update.html'
     success_url = reverse_lazy('tasks_list')
     success_message = my_messages.task_update
@@ -73,7 +73,7 @@ class UpdateTask(LoginRequiredMixin, SuccessMessageMixin,
 
     def handle_no_permission(self):
         messages.warning(self.request, my_messages.login)
-        return super().handle_no_permission()
+        return redirect(self.login_url)
 
 
 class DeleteTask(LoginRequiredMixin, SuccessMessageMixin,
