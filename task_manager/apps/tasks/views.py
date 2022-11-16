@@ -26,8 +26,9 @@ class TasksList(LoginRequiredMixin, FilterView):
 
     def handle_no_permission(self):
         messages.warning(self.request, my_messages.login)
-        #return super().handle_no_permission()
+        # return super().handle_no_permission()
         return redirect(self.login_url)
+
 
 class ShowTask(LoginRequiredMixin, DetailView):
     model = Task

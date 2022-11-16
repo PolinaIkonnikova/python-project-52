@@ -5,5 +5,4 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/f3f0093bd6242cd36fb2/maintainability)](https://codeclimate.com/github/PolinaIkonnikova/python-project-52/maintainability)
 
 Heroku:
-[git@github.com:PolinaIkonnikova/python-project-52.git]
-
+[https://task-manager-ikonnikova.herokuapp.com/]
