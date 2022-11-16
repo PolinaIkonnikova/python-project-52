@@ -16,6 +16,7 @@ import os
 import rollbar
 import dj_database_url
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 load_dotenv()
 
@@ -166,9 +167,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 FIXTURE_DIRS = [os.path.join(BASE_DIR, 'fixtures')]
 
-LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

@@ -1,7 +1,6 @@
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView,\
     DeleteView, UpdateView
-# from django.contrib.auth.models import User
 from .models import User
 from .forms import Register
 from django.contrib.auth.mixins import LoginRequiredMixin,\
@@ -69,7 +68,6 @@ class UpdateUser(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 class DeleteUser(LoginRequiredMixin, UserPassesTestMixin,
                  DeleteView,):
     model = User
-    login_url = 'login'
     success_url = reverse_lazy('users_list')
     template_name = 'crud/delete.html'
     extra_context = {'deltitle': title_names.to_del_user}

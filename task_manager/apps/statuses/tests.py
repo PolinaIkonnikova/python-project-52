@@ -4,19 +4,24 @@ from task_manager.apps.users.models import User
 from task_manager.apps.statuses.models import Status
 from django.core.exceptions import ObjectDoesNotExist
 from task_manager.utils.text import MessageForUser
-# import pytest
+
 
 messages = MessageForUser()
 
 
-# @pytest.mark.parametrize('url', [reverse('statuses'),
-#                                  reverse('create_st'),
-#                                  reverse('update_st', args=[1]),
-#                                  reverse('delete_st', args=[1])])
-# class StatusesWithoutAuthentication(SimpleTestCase):
-#     def test_no_auth(self, url):
-#         response = self.client.get(url)
-#         self.assertRedirects(response, reverse('login'))
+class TestStatusesWithoutAuth(TestCase):
+
+    def setUp(self):
+        self.login = reverse('login')
+        self.urls = [reverse('statuses'),
+                     reverse('create_st'),
+                     reverse('delete_st', args=[1]),
+                     reverse('update_st', args=[1])]
+
+    def test_no_auth(self):
+        for u in self.urls:
+            response = self.client.get(u)
+            self.assertRedirects(response, self.login)
 
 
 class StatusesTestCase(TestCase):

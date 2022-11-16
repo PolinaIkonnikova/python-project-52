@@ -8,22 +8,6 @@ from task_manager.utils.text import MessageForUser
 messages = MessageForUser()
 
 
-# class TestNoAuthUser(TestCase):
-#
-#     def setUp(self):
-#         self.login = reverse('login')
-#         self.urls = [reverse('tasks_list')],
-#                      # reverse('create_tsk'),
-#                      # reverse('delete_tsk', args=[6]),
-#                      # reverse('update_tsk', args=[6]),
-#                      # reverse('show_task', args=[9])]
-#
-#     def test_no_auth_test(self):
-#         #for u in self.urls:
-#             response = self.client.get(reverse('tasks_list'))
-#             self.assertRedirects(response, reverse('login'))
-
-
 class UserTestCase(TestCase):
     fixtures = ['statuses.json', 'users.json',
                 'tasks.json', 'labels.json']

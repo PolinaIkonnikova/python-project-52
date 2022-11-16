@@ -4,23 +4,24 @@ from task_manager.apps.users.models import User
 from task_manager.apps.labels.models import Label
 from django.core.exceptions import ObjectDoesNotExist
 from task_manager.utils.text import MessageForUser
-# import pytest
+
 
 messages = MessageForUser()
 
 
-''' проверка, что страницы не будут видны для неавтор.
- пользователей, перенаправление на страницу входа '''
+class TestLabelsWithoutAuth(TestCase):
 
+    def setUp(self):
+        self.login = reverse('login')
+        self.urls = [reverse('labels'),
+                     reverse('create_lbl'),
+                     reverse('delete_lbl', args=[1]),
+                     reverse('update_lbl', args=[1])]
 
-# @pytest.mark.parametrize('url', [reverse('labels'),
-#                                  reverse('create_lbl'),
-#                                  reverse('delete_lbl', args=[1]),
-#                                  reverse('update_lbl', args=[1])])
-# class TasksWithoutAuthentication(TestCase):
-#     def test_no_auth(self, url):
-#         response = self.client.get(url)
-#         self.assertRedirects(response, reverse('login'))
+    def test_no_auth(self):
+        for u in self.urls:
+            response = self.client.get(u)
+            self.assertRedirects(response, self.login)
 
 
 class LabelsTestCase(TestCase):

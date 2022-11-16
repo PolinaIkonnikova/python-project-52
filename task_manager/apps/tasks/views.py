@@ -2,7 +2,6 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView,\
     DeleteView, UpdateView, DetailView
 from django_filters.views import FilterView
-# from .forms import TaskCreateUpdateForm
 from .models import Task
 from django.contrib.auth.mixins import LoginRequiredMixin, \
     UserPassesTestMixin
@@ -26,7 +25,6 @@ class TasksList(LoginRequiredMixin, FilterView):
 
     def handle_no_permission(self):
         messages.warning(self.request, my_messages.login)
-        # return super().handle_no_permission()
         return redirect(self.login_url)
 
 
@@ -38,7 +36,6 @@ class ShowTask(LoginRequiredMixin, DetailView):
 
     def handle_no_permission(self):
         messages.warning(self.request, my_messages.login)
-        # return super().handle_no_permission()
         return redirect(self.login_url)
 
 
@@ -49,10 +46,11 @@ class CreateTask(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('tasks_list')
     extra_context = {'header': title_names.create_task,
                      'button_name': title_names.create}
+    login_url = 'login'
 
     def handle_no_permission(self):
         messages.warning(self.request, my_messages.login)
-        return super().handle_no_permission()
+        return redirect(self.login_url)
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
@@ -71,6 +69,7 @@ class UpdateTask(LoginRequiredMixin, SuccessMessageMixin,
     success_message = my_messages.task_update
     extra_context = {'header': title_names.update_task,
                      'button_name': title_names.update}
+    login_url = 'login'
 
     def handle_no_permission(self):
         messages.warning(self.request, my_messages.login)

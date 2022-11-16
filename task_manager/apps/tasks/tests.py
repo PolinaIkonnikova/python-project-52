@@ -4,24 +4,25 @@ from task_manager.apps.users.models import User
 from task_manager.apps.tasks.models import Task
 from django.core.exceptions import ObjectDoesNotExist
 from task_manager.utils.text import MessageForUser
-# import pytest
+
 
 messages = MessageForUser()
 
 
-''' проверка, что страницы не будут видны для неавтор.
- пользователей, перенаправление на страницу входа '''
+class TestTasksWithoutAuth(TestCase):
 
+    def setUp(self):
+        self.login = reverse('login')
+        self.urls = [reverse('tasks_list'),
+                     reverse('create_tsk'),
+                     reverse('delete_tsk', args=[6]),
+                     reverse('update_tsk', args=[6]),
+                     reverse('show_task', args=[9])]
 
-# @pytest.mark.parametrize('url', [reverse('tasks_list'),
-#                                  reverse('create_tsk'),
-#                                  reverse('delete_tsk', args=[6]),
-#                                  reverse('update_tsk', args=[6]),
-#                                  reverse('show_task', args=[9])])
-# class TasksWithoutAuthentication(TestCase):
-#     def test_no_auth(self, url):
-#         response = self.client.get(url)
-#         self.assertRedirects(response, reverse('login'))
+    def test_no_auth(self):
+        for u in self.urls:
+            response = self.client.get(u)
+            self.assertRedirects(response, self.login)
 
 
 class TasksTestCase(TestCase):
@@ -30,6 +31,7 @@ class TasksTestCase(TestCase):
                 'tasks.json', 'labels.json']
 
     def setUp(self):
+        self.login = reverse('login')
         self.user1 = User.objects.get(pk=1)
         self.user2 = User.objects.get(pk=2)
         self.tasks = reverse('tasks_list')
