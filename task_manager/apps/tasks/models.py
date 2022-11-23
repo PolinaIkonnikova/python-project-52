@@ -5,7 +5,7 @@ from task_manager.apps.labels.models import Label
 from task_manager.utils.text import NameForField
 
 
-names = NameForField() ac4230 8facf4
+names = NameForField()
 
 
 class Task(models.Model):
