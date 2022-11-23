@@ -40,6 +40,7 @@ class UpdateUser(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     success_url = reverse_lazy('users_list')
     extra_context = {'header': title_names.update_user,
                      'button_name': title_names.update}
+    login_url = reverse_lazy('login')
 
     def test_func(self):
         user = self.get_object()
@@ -60,7 +61,7 @@ class UpdateUser(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
             url = reverse_lazy('users_list')
         else:
             message = my_messages.login
-            url = self.success_url
+            url = self.login_url
         messages.warning(self.request, message)
         return redirect(url)
 
@@ -71,6 +72,7 @@ class DeleteUser(LoginRequiredMixin, UserPassesTestMixin,
     success_url = reverse_lazy('users_list')
     template_name = 'crud/delete.html'
     extra_context = {'deltitle': title_names.to_del_user}
+    login_url = reverse_lazy('login')
 
     def test_func(self):
         user = self.get_object()
