@@ -19,7 +19,7 @@ title_names = TitleName()
 class TasksList(LoginRequiredMixin, FilterView):
     model = Task
     context_object_name = 'tasks'
-    template_name = 'tasks/tasks_list.html'
+    template_name = 'tasks/tasks_list_v2.html'
     filterset_class = TaskFilter
     login_url = 'login'
 

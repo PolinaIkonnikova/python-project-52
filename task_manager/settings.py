@@ -36,7 +36,7 @@ DEBUG = os.getenv('DEBUG', 'False') == 'True'
 ALLOWED_HOSTS = ['webserver',
                  '0.0.0.0',
                  '127.0.0.1',
-                 'task-manager-ikonnikova.herokuapp.com']
+                 'task-manager-ikonnikova.up.railway.app']
 
 
 # Application definition

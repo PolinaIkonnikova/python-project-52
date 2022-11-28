@@ -4,5 +4,5 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/f3f0093bd6242cd36fb2/test_coverage)](https://codeclimate.com/github/PolinaIkonnikova/python-project-52/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/f3f0093bd6242cd36fb2/maintainability)](https://codeclimate.com/github/PolinaIkonnikova/python-project-52/maintainability)
 
-Heroku:
-[https://task-manager-ikonnikova.herokuapp.com/]
+Railway:
+[https://task-manager-ikonnikova.up.railway.app/]
