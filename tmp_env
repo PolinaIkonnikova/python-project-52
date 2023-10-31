@@ -1,0 +1,3 @@
+SECRET_KEY='django-insecure-1%p(cujr9n#*30rnw)egot2!pkxl-u4=nwa+*h95dq-=83*qbo'
+ROLLBAR_KEY='a6b53c16037f45ee9ca52dc6d44007d3'
+DEBUG=True
