@@ -1,0 +1,16 @@
+version: "3"
+services:
+  tasks:
+    image: tasks_app
+    build:
+      context: .
+    container_name: tasks_app
+    env_file:
+      - .env
+# оставила sqlite без поднятия postgres
+#    depends_on:
+#      - db
+    command: [ "/tasks/run_app.sh" ]
+    ports:
+      - "8888:8000"
+    network_mode: bridge
